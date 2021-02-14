@@ -37,18 +37,18 @@ public class AutoreValidation implements Validator{
 		
 
 
-		if (nome.isBlank())
+		if (nome==null || nome.isEmpty())
 			errors.rejectValue("nome", "required");
 		else if (nome.length() < MIN_NAME_LENGTH || nome.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("nome", "size");
 		
 
-		if (cognome.isBlank())
+		if (cognome==null || cognome.isEmpty())
 			errors.rejectValue("cognome", "required");
 		else if (cognome.length() < MIN_NAME_LENGTH || cognome.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("cognome", "size");
 		
-		if (nazionalita.isBlank())
+		if (nazionalita==null || nazionalita.isEmpty())
 			errors.rejectValue("nazionalita", "required");
 		else if (nazionalita.length() < MIN_NAME_LENGTH || nazionalita.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("nazionalita", "size");

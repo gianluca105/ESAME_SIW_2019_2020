@@ -35,13 +35,13 @@ public class OperaArteValidation implements Validator{
 		
 
 
-		if (tecnica.isBlank())
+		if (tecnica==null || tecnica.isEmpty())
 			errors.rejectValue("tecnica", "required");
 		else if (tecnica.length() < MIN_NAME_LENGTH || tecnica.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("tecnica", "size");
 		
 
-		if (titolo.isBlank())
+		if (titolo==null || titolo.isEmpty())
 			errors.rejectValue("titolo", "required");
 		else if (titolo.length() < MIN_NAME_LENGTH || titolo.length() > MAX_NAME_LENGTH)
 			errors.rejectValue("titolo", "size");

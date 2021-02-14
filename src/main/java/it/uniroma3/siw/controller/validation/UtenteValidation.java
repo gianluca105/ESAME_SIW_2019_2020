@@ -21,12 +21,12 @@ public class UtenteValidation implements Validator {
         String firstName = user.getNome().trim();
         String lastName = user.getCognome().trim();
 
-        if (firstName.isBlank())
+        if (firstName==null || firstName.isEmpty())
             errors.rejectValue("nome", "required");
         else if (firstName.length() < MIN_NAME_LENGTH || firstName.length() > MAX_NAME_LENGTH)
             errors.rejectValue("nome", "size");
 
-        if (lastName.isBlank())
+        if (lastName==null || lastName.isEmpty())
             errors.rejectValue("cognome", "required");
         else if (lastName.length() < MIN_NAME_LENGTH || lastName.length() > MAX_NAME_LENGTH)
             errors.rejectValue("cognome", "size");
