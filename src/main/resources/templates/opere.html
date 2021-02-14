@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+	<h1 align="center">Ricerca Per Opere</h1>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Titolo</th>
+					<th>Vai all'opera</th>
+					<th sec:authorize="hasAuthority('ADMIN')">Elimina</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="opera : ${opere}">
+					<td th:text="${opera.titolo}"></td>
+
+					<td><form th:action="@{'/opere/{id}'(id=${opera.id})}" method="GET">
+							<button class="bot" type="submit" name="submit" value="value">
+								GO!</button>
+						</form></td>
+					<td><form sec:authorize="hasAuthority('ADMIN')" method="POST"
+							th:action="@{/admin/opere/{id}/rimuovi(id=${opera.id})}">
+							<button class="bot" type="submit" name="submit" value="value">
+								DELETE</button></form></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<h3 class="header__menu__item">
+			<a href="/home">Home</a>
+		</h3></div>
+</body>
+</html>

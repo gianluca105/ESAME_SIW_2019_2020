@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+	<h1 align="center">Elimina Autore</h1>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Cancella Autore</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="autore : ${autori}">
+					<td th:text="${autore.nome}"></td>
+					<td th:text="${autore.cognome}"></td>
+					<td>
+
+						<form sec:authorize="hasAuthority('ADMIN')" method="POST"
+							th:action="@{/admin/autori/{id}/rimuovi(id=${autore.id})}">
+							<button class="bot" type="submit" name="submit" value="value">
+								DELETE</button>
+					</td>
+
+					</form>
+
+
+
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+		<h3 class="header__menu__item">
+		<a href="/admin">Home Admin</a>
+	</h3>
+	</div>
+
+
+</body>
+</html>

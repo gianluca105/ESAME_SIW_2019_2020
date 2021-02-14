@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+     <h1 align="center" th:text="${opera.titolo}"> </h1>
+	<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>Titolo</th>
+				<th>Anno</th>
+				<th>Tecnica</th>
+				<th>Dimensione</th>
+				<th>Autore</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${opera.titolo}"></td>
+				<td th:text="${opera.anno}"></td>
+				<td th:text="${opera.tecnica}"></td>
+				<td th:text="${opera.dimensione}"></td>
+				<td th:text="${opera.autore.nome} +' '+  ${opera.autore.cognome}"></td>
+			</tr>
+		
+		</tbody>
+	</table>
+	<h3 class="header__menu__item"><a href="/home">Home</a></h3>
+</div>
+</body>
+</html>

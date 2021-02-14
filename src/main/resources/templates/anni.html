@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+
+	<h1 align="center">Ricerca Per Anno</h1>
+
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Anno</th>
+					<th>Vai alle opere</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="anno : ${anni}">
+					<td th:text="${anno}"></td>
+					<td><form th:action="@{'/opereAnni/{anno}'(anno=${anno})}">
+						<button class="bot" type="submit" name="submit" value="value">
+							GO!</button>
+					</form></td>
+		
+				</tr>
+
+
+			</tbody>
+		</table>
+		<h3 class="header__menu__item">
+		<a href="/home">Home</a>
+	</h3>
+	</div>
+	
+</body>
+
+</html>

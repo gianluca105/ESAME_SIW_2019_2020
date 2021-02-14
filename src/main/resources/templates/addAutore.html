@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+<h1 align="center">Aggiungi Autore</h1>
+<div class="container">
+<form id="aggiungiAutore" th:action="@{/admin/addAutore}"
+	th:object="${autore}" method="post">
+	<table>
+		<tr>
+			<td><label for="autoreNome">Nome</label></td>
+			<td><input id=autoreNome type="text" placeholder="NOME"
+				required th:field="*{nome}" /></td>
+			<td th:if="${#fields.hasErrors('nome')}" th:errors=*{nome}
+				th:style="'colo:red'"></td>
+		</tr>
+		<tr>
+			<td><label for="autoreCognome">Cognome</label></td>
+			<td><input id=autoreCognome type="text"
+				placeholder="COGNOME" required th:field="*{cognome}" /></td>
+			<td th:if="${#fields.hasErrors('cognome')}"
+				th:errors=*{cognome} th:style="'colo:red'"></td>
+		</tr>
+		<tr>
+			<td><label for="autoreNazionalita">Nazione</label></td>
+			<td><input id=autoreNazionalita type="text" placeholder="NAZIONALITA"
+				required th:field="*{nazionalita}" /></td>
+			<td th:if="${#fields.hasErrors('nazionalita')}" th:errors=*{nazionalita}
+				th:style="'colo:red'"></td>
+		</tr>
+		<tr>
+			<td><label for="autoreDataDiMorte">Data morte</label></td>
+			<td><input id=autoreDataDiMorte type="date" placeholder="DATA DI MORTE"
+				required th:field="*{dataDiMorte}" /></td>
+			<td th:if="${#fields.hasErrors('dataDiMorte')}" th:errors=*{dataDiMorte}
+				th:style="'colo:red'"></td>
+		</tr>
+		<tr>
+			<td><label for="autoreDiNascita">Data nascita</label></td>
+			<td><input id=autoreDiNascita type="date" placeholder="DATA DI NASCITA"
+				required th:field="*{dataDiNascita}" /></td>
+			<td th:if="${#fields.hasErrors('dataDiNascita')}" th:errors=*{dataDiNascita}
+				th:style="'colo:red'"></td>
+		</tr>
+		<tr>
+			<td><button type="submit">Salva</button></td>
+		</tr>
+	</table>
+
+
+
+
+
+</form>
+<h3 class="header__menu__item">
+			<a href="/admin">Home Admin</a>
+		</h3>
+</div>
+
+</body>
+</html>

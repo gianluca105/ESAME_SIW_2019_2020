@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+
+	<h1 align="center">Ricerca Per Autori</h1>
+
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Nazionalità</th>
+					<th>Data di nascita</th>
+					<th>Data di morte</th>
+					<th>Vai alle opere</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="autore : ${autori}">
+				<td th:text="${autore.nome}"></td>
+				<td th:text="${autore.cognome}"></td>
+				<td th:text="${autore.nazionalita}"></td>
+				<td th:text="${autore.dataDiNascita}"></td>
+				<td th:text="${autore.dataDiMorte}"></td>
+				<td><form th:action="@{'/opereAutore/{id}'(id=${autore.id})}">
+						<button class="bot" type="submit" name="submit" value="value">
+							GO!</button>
+					</form></td>
+				
+				
+				</tr>
+			
+			</tbody>
+		</table>
+		<h3 class="header__menu__item">
+		<a href="/home">Home</a>
+	</h3>
+	</div>
+</body>
+
+</html>

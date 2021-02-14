@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Museo Pomezia</title>
+    <link rel="stylesheet"  href="/css/registerUser.css">
+</head>
+
+<body>
+<form id = "registerUserForm"
+      th:action="@{/users/register}"
+      method="POST">
+
+ <div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>INSCRIVITI</span>
+            <span>AL NOSTRO SITO</span>
+          </div>
+        
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              <input class="app-form-control" type="text" th:field="${credentialsForm.userName}" placeholder="USERNAME" >
+              <div th:if="${#fields.hasErrors('credentialsForm.userName')}" th:errors="${credentialsForm.userName}" th:style="'color:red'"></div>
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="password" th:field="${credentialsForm.password}" placeholder="PASSWORD">
+              <div th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:red'"></div>
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="text" th:field="${userForm.nome}" placeholder="NOME">
+              <div th:if="${#fields.hasErrors('userForm.nome')}" th:errors="${userForm.nome}" th:style="'color:red'"></div>
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" type="text" th:field="${userForm.cognome}" placeholder="COGNOME">
+              <div th:if="${#fields.hasErrors('userForm.cognome')}" th:errors="${userForm.cognome}" th:style="'color:red'"><div>
+            </div>
+           
+          </div>>
+          
+          <div >
+             <button class="app-form-button" >INVIA</button>
+            
+         </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</form>
+</body>
+</html>

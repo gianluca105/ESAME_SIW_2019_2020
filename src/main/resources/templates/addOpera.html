@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Museo Pomezia</title>
+<link rel="stylesheet" href="/css/tabelle.css">
+</head>
+<body>
+	<h1 align="center">Aggiungi Opera</h1>
+
+	<div class="container">
+		<form id="aggiungiOperaArte" th:action="@{/admin/addOpera}"
+			th:object="${operaArte}" method="post">
+			<table>
+				<tr>
+					<td><label for="operaArteTitolo">Titolo</label></td>
+					<td><input id=operaArteTitolo type="text" placeholder="TITOLO"
+						required th:field="*{titolo}" /></td>
+					<td th:if="${#fields.hasErrors('titolo')}" th:errors=*{titolo}
+						th:style="'color:red'"></td>
+				</tr>
+				<tr>
+					<td><label for="operaArteDimensione">Dimensione</label></td>
+					<td><input id=operaArteDimensione type="text"
+						placeholder="DIMENSIONE" required th:field="*{dimensione}" /></td>
+					<td th:if="${#fields.hasErrors('dimensione')}"
+						th:errors=*{dimensione} th:style="'color:red'"></td>
+				</tr>
+				<tr>
+					<td><label for="operaArteTitolo">Tecnica</label></td>
+					<td><input id=operaArteTecnica type="text"
+						placeholder="TECNICA" required th:field="*{tecnica}" /></td>
+					<td th:if="${#fields.hasErrors('tecnica')}" th:errors=*{tecnica}
+						th:style="'color:red'"></td>
+				</tr>
+				<tr>
+					<td><label for="operaArteTitolo">Anno</label></td>
+					<td><input id=operaArteAnno type="number" placeholder="ANNO"
+						required th:field="*{anno}" /></td>
+					<td th:if="${#fields.hasErrors('anno')}" th:errors=*{anno}
+						th:style="'color:red'"></td>
+				</tr>
+				<tr>
+					<td><label for="operaArteAutore">Autore</label></td>
+					<td><select class="btn btn-primary btn-md"
+						th:field="*{autore}" required="required">
+							<option th:each="autore : ${autori}" th:value="${autore.id}"
+								th:text="${autore.nome}+' '+${autore.cognome}">Autore</option>
+					</select></td>
+					<td><a href="/admin/addAutore" id="addAutore" class ="ref" > Aggiungi Autore</a></td>
+					
+				</tr>
+				<tr>
+					<td> </td>
+					
+				    <td><button type="submit">Salva</button></td>
+				</tr>
+			</table>
+
+
+
+
+
+		</form>
+		<h3 class="header__menu__item">
+			<a href="/admin">Home Admin</a>
+		</h3>
+	</div>
+</body>
+</html>
