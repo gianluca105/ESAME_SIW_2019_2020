@@ -74,9 +74,11 @@ public class AdminController {
 	public String addOpera(Model model) {
 		Utente loggedUser = sessionData.getLoggedUser();
 		List<Autore> autori = autoreService.findAll();
+		OperaArte opera = new OperaArte();
 		model.addAttribute("utente", loggedUser);
-		model.addAttribute("operaArte",new OperaArte());
+		model.addAttribute("operaArte",opera);
 		model.addAttribute("autori",autori);
+		
 		return "addOpera";
 	}
 	@RequestMapping( value = "/admin/addOpera", method = RequestMethod.POST)
@@ -92,8 +94,12 @@ public class AdminController {
         }
         else {
           model.addAttribute(operaArte);
+          Utente loggedUser = sessionData.getLoggedUser();
+          loggedUser.setOperaAggiunta(operaArte);
+       
           operaArteService.saveOperaArte(operaArte);
         }
+       
         return "redirect:/admin/addOpera";
     }
 	@RequestMapping(value = "/admin/addAutore", method = RequestMethod.GET)
@@ -116,6 +122,8 @@ public class AdminController {
         }
         else {
           model.addAttribute(autore);
+          Utente loggedUser = sessionData.getLoggedUser();
+          loggedUser.setAutoreAggiunto(autore);
           autoreService.saveAutore(autore);
         }
        

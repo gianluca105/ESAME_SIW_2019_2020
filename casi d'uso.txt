@@ -1,0 +1,53 @@
+CASI D'USO:
+
+
+
+CASO D'USO UC1:Ricerca opere dipinte da un certo autore
+    Attore Primario:  Utente generico
+
+  •  Dalla home page l’utente seleziona il percorso “RICERCA OPERE”
+  •  Cliccherà sull'opzione “RICERCA OPERE PER ARTISTA”
+  •  Selezionerà le opere di un determinato artista tra quelli presenti nella galleria
+  •  Potra scegliere di vedere in dettaglio una delle opere della lista
+
+
+CASO D'USO UC2:Ricerca opere dipinte in un certo anno
+    Attore Primario:  Utente generico
+
+  •  Dalla home page l’utente seleziona il percorso “RICERCA OPERE”
+  •  Cliccherà sull'opzione “RICERCA OPERE PER ANNO”
+  •  Selezionerà le opere di un determinato anno tra quelli presenti nella galleria
+  •  Potra scegliere di vedere in dettaglio una delle opere della lista
+
+
+
+CASO D'USO UC3:Visualizzazione di tutte le opere presenti nella galleria 
+    Attore Primario:  Utente generico
+
+  •  Dalla home page l’utente seleziona il percorso “RICERCA OPERE”
+  •  Cliccherà sull'opzione “RICERCA PER OPERA”
+  •  Potra scegliere di vedere in dettaglio una delle opere della lista
+
+
+
+CASO D'USO UC4:  AGGIUNTA DI UN’OPERA NELLA GALLERIA
+    Attore Primario:  Admin
+
+  •  Dalla home page dell'amministratore esso selezionerà "AGGIUNGI OPERA"
+  •  L'admin compilera la form di aggiunta opera e se l'opera non è presente nella galleria verrà aggiunta
+  •  Nel caso che l'autore dell'opera non sia presente della galleria l'admin potrà cliccare sull'opzione "AGGIUNGI AUTORE" e compilare la form per aggiungere un nuovo autore
+
+
+CASO D'USO UC5:  ELIMINAZIONE DI UN’OPERA DALLA GALLERIA    
+Attore Primario:  Admin
+
+  •  Dalla home page dell'amministratore esso selezionerà "RIMUOVI OPERA"
+  •  Selezionerà tra tutte le opere quella che vuole cancellare ed essa verrà eliminata 
+
+
+
+CASO D'USO UC6:  ELIMINAZIONE DI UN AUTORE DALLA GALLERIA
+    Attore Primario:  Admin
+
+  •  Dalla home page dell'amministratore esso selezionerà "RIMUOVI AUTORE"
+  •  Selezionerà tra tutti gli autori quella che vuole cancellare ed esso verrà eliminato, verrano eliminate anche tutte le opere di quell'autore  

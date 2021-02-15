@@ -23,16 +23,13 @@ public class Utente {
 	@Column(nullable = false)
 	private String cognome;
 	
-	private LocalDateTime dataCreazione;
-	
-	private LocalDateTime ultimoUpdate;
 
 	
 	@OneToOne
-	private OperaArte operaModifica;
+	private OperaArte operaAggiunta;
 	
-	@OneToMany
-	private List<OperaArte> opereArte;
+	@OneToOne
+	private Autore autoreAggiunto;
 	
 	
 
@@ -64,36 +61,25 @@ public class Utente {
 		this.cognome = cognome;
 	}
 
-	public LocalDateTime getDataCreazione() {
-		return dataCreazione;
+	
+
+
+	public OperaArte getOperaAggiunta() {
+		return operaAggiunta;
 	}
 
-	public void setDataCreazione(LocalDateTime dataCreazione) {
-		this.dataCreazione = dataCreazione;
+	public void setOperaAggiunta(OperaArte operaAggiunta) {
+		this.operaAggiunta = operaAggiunta;
 	}
 
-	public LocalDateTime getUltimoUpdate() {
-		return ultimoUpdate;
+	public Autore getAutoreAggiunto() {
+		return autoreAggiunto;
 	}
 
-	public void setUltimoUpdate(LocalDateTime ultimoUpdate) {
-		this.ultimoUpdate = ultimoUpdate;
+	public void setAutoreAggiunto(Autore autoreAggiunto) {
+		this.autoreAggiunto = autoreAggiunto;
 	}
 
-	public OperaArte getOperaModifica() {
-		return operaModifica;
-	}
-
-	public void setOperaModifica(OperaArte operaModifica) {
-		this.operaModifica = operaModifica;
-	}
-
-	public List<OperaArte> getOpereArte() {
-		return opereArte;
-	}
-
-	public void setOpereArte(List<OperaArte> opereArte) {
-		this.opereArte = opereArte;
-	}
+	
 
 }
